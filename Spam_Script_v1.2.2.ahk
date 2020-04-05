@@ -1,7 +1,28 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#Warn  ; Enable warnings to assist with detecting common errors.
+; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+/* 
+ ::::::::  :::::::::      :::     ::::    ::::       ::::::::   ::::::::  :::::::::  ::::::::::: :::::::::  ::::::::::: 
+:+:    :+: :+:    :+:   :+: :+:   +:+:+: :+:+:+     :+:    :+: :+:    :+: :+:    :+:     :+:     :+:    :+:     :+:     
++:+        +:+    +:+  +:+   +:+  +:+ +:+:+ +:+     +:+        +:+        +:+    +:+     +:+     +:+    +:+     +:+     
++#++:++#++ +#++:++#+  +#++:++#++: +#+  +:+  +#+     +#++:++#++ +#+        +#++:++#:      +#+     +#++:++#+      +#+     
+       +#+ +#+        +#+     +#+ +#+       +#+            +#+ +#+        +#+    +#+     +#+     +#+            +#+     
+#+#    #+# #+#        #+#     #+# #+#       #+#     #+#    #+# #+#    #+# #+#    #+#     #+#     #+#            #+#     
+ ########  ###        ###     ### ###       ###      ########   ########  ###    ### ########### ###            ###     
+
+
+written by voxal.
+
+
+Change the ·F3Text· Var to make F3 Spam anthing.
+*/
+
+
+F3Text = Spam
+
+
+
 
 
 1Word1 = ヾ(≧▽≦*)o
@@ -165,6 +186,19 @@ F2::
       RandWords .= 2Word%N% "`n" 
    } 
     Send, %RandWords%
+    Send, {Enter}
+Return
+F3:: 
+   If (toggle := !toggle) {
+	Send, {Enter}
+        SetTimer, spamBot3, 100
+    }
+    Else {
+        SetTimer, spamBot3, off
+	Send, {Enter}
+    }
+ spamBot3:
+    Send, %F3Text%
     Send, {Enter}
 Return
 Esc::ExitApp  ; Exit script with Escape key
