@@ -5,6 +5,7 @@ A autohotkey script for spaming
 
 - F1 = Kaomoji - by voxal
 - F2 = Emoji - by voxal
+- F3 = Customizable - by voxal
 - Esc = Disable Script.
 
 ## Contributions
